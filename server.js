@@ -1,7 +1,7 @@
 //Dependencies
 const express = require('express');
 const mongoose = require ('mongoose');
-const methodOverride = require('method-override');
+const Product = require('./models/product');
 require('dotenv').config()
 
 const app = express();
@@ -17,29 +17,28 @@ const db = mongoose.connection;
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
 db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
-db.on('disconnected', () => console.log('mongod disconnected'));
 
-//Middleware
 
-//use public folder for static assets
-app.use(express.static('public'));
-
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));
+// Middleware
+// Body parser middleware: give us access to req.body
+app.use(express.urlencoded({ extended: true }));
 // extended: false - does not allow nested objects in query strings
 
-app.use(express.json());
-// returns middleware that only parses JSON - may or may not need it depending on your project
-
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
-
 // Routes
+// New
+// app.get('/products/new', (req,res) => {
+  // res.send('new');
+// });
+
 // Create
-app.post('/products' , (req, res) => {
+app.post('/products', (req, res) => {
+  if(req.body.completed === 'on') {
+    req.body.completed = true;
+  } else {
+    req.body.completed = false;
+  }
   res.send(req.body);
-});
+  });
 
 //Listener
 app.listen(PORT, () => {
