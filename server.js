@@ -26,9 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 // New
-// app.get('/products/new', (req,res) => {
-  // res.send('new');
-// });
+
 
 // Create
 app.post('/products', (req, res) => {
