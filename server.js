@@ -1,6 +1,7 @@
 //Dependencies
 const express = require('express');
 const mongoose = require ('mongoose');
+const methodOverride = require('method-override');
 const Product = require('./models/product');
 require('dotenv').config()
 
@@ -21,8 +22,9 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 
 // Middleware
 // Body parser middleware: give us access to req.body
-app.use(express.urlencoded({ extended: false }));
 // extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 // Routes - Induces
 
@@ -38,6 +40,11 @@ app.get('/products', (req, res) => {
 // New
 app.get ('/products/new', (req, res) => {
   res.render('new.ejs');
+});
+
+// Delete
+app.delete('/products/:id', (req, res) => {
+  res.send('deleting 3, 2, 1...')
 });
 
 // Create
