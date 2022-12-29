@@ -21,22 +21,21 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 
 // Middleware
 // Body parser middleware: give us access to req.body
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 // extended: false - does not allow nested objects in query strings
 
 // Routes
 // New
-
+app.get ('/products/new', (req, res) => {
+  res.render('new.ejs');
+})
 
 // Create
 app.post('/products', (req, res) => {
-  if(req.body.completed === 'on') {
-    req.body.completed = true;
-  } else {
-    req.body.completed = false;
-  }
-  res.send(req.body);
-  });
+  Product.create(req.body, (error, createProduct) => {
+    res.send(createProduct)
+  })
+});
 
 //Listener
 app.listen(PORT, () => {

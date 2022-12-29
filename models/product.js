@@ -15,10 +15,10 @@ const productSchema = new Schema({
     price: {
         type: Number,
     },
-    quantity: {
+    qty: {
         type: Number,
     },
     completed: Boolean
 }, { timestamps: true });
 
-module,exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema);
