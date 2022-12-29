@@ -10,11 +10,13 @@
     <nav>
         <a href="/products/new"> Add New Jewelry</a>
     </nav>
+
     <h1>Jewelry Store</h1>
+    
     <ul>
         <% products.forEach(product => { %>
          <li>
-            <%= product.name %> 
+            <a href="/products/<%= product._id %>"><%= product.name %> </a>
          </li>
          <% }); %>
 

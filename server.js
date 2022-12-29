@@ -43,8 +43,17 @@ app.get ('/products/new', (req, res) => {
 // Create
 app.post('/products', (req, res) => {
   Product.create(req.body, (error, createProduct) => {
-    res.send(createProduct)
+    res.redirect('/products');
   })
+});
+
+// Show
+app.get('/products/:id', (req, res) => {
+  Product.findById(req.params.id, (error, foundProduct) => {
+    res.render('show.ejs', {
+      product: foundProduct
+    });
+  });
 });
 
 //Listener
