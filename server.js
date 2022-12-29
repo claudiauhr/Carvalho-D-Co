@@ -24,11 +24,21 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 app.use(express.urlencoded({ extended: false }));
 // extended: false - does not allow nested objects in query strings
 
-// Routes
+// Routes - Induces
+
+// Index
+app.get('/products', (req, res) => {
+  Product.find({}, (error, allProducts) => {
+    res.render('index.ejs', {
+      products: allProducts,
+    });
+  });
+});
+
 // New
 app.get ('/products/new', (req, res) => {
   res.render('new.ejs');
-})
+});
 
 // Create
 app.post('/products', (req, res) => {
