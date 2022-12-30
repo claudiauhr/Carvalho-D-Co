@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const methodOverride = require('method-override');
 const Product = require('./models/product');
+const golden = require('./golden');
 require('dotenv').config()
 
 const app = express();
@@ -26,8 +27,16 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-// Routes - Induces
+// Seed Route
+app.get('/products/seed', (req, res) => {
+  Product.deleteMany({}, (error, allProducts) => {
+    Product.create(golden, (error) => {
+      res.redirect('/products');
+    });
+  });
+});
 
+// Induces
 // Index
 app.get('/products', (req, res) => {
   Product.find({}, (error, allProducts) => {
@@ -44,14 +53,32 @@ app.get ('/products/new', (req, res) => {
 
 // Delete
 app.delete('/products/:id', (req, res) => {
-  res.send('deleting 3, 2, 1...')
+  Product.findByIdAndDelete(req.params.id, (error, deleteProduct) => {
+    res.redirect('/products');
+  });
 });
+
+// Update
+app.put('/products/:id', (req, res) => {
+  Product.findByIdAndUpdate(req.params.id, req.body, { new: true },(error, updateProduct) => {
+    res.redirect(`/products/${req.params.id}`)
+  });
+})
 
 // Create
 app.post('/products', (req, res) => {
   Product.create(req.body, (error, createProduct) => {
     res.redirect('/products');
   })
+});
+
+// Edit
+app.get('/products/:id/edit', (req, res) => {
+  Product.findById(req.params.id, (error, foundProduct) => {
+    res.render('edit.ejs', {
+      product: foundProduct
+    });
+  });
 });
 
 // Show
