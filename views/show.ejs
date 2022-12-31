@@ -15,8 +15,12 @@
     <p><%= product.description %></p>
     <p><%= product.price %></p>
 
-    <!-- Edit page -->
+    <!-- Delete section -->
+    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+    </form>
     
+    <!-- Edit page -->
     <a href="/products/<%= product._id %>/edit">Edit Jewelry</a>
 </body>
 </html>

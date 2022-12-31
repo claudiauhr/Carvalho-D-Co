@@ -60,8 +60,10 @@ app.delete('/products/:id', (req, res) => {
 
 // Update
 app.put('/products/:id', (req, res) => {
-  Product.findByIdAndUpdate(req.params.id, req.body, { new: true },(error, updateProduct) => {
-    res.redirect(`/products/${req.params.id}`)
+  Product.findByIdAndUpdate(req.params.id, 
+    {'name': req.body.name, 'description':req.body.description, 'price':parseInt(req.body.price)}, 
+    { new: true },(error, product) => {
+    res.render('show.ejs', {product});
   });
 })
 
@@ -74,18 +76,16 @@ app.post('/products', (req, res) => {
 
 // Edit
 app.get('/products/:id/edit', (req, res) => {
-  Product.findById(req.params.id, (error, foundProduct) => {
-    res.render('edit.ejs', {
-      product: foundProduct
-    });
+  Product.findById(req.params.id, (err, product) =>{
+    res.render('edit.ejs', { product: product });
   });
 });
 
 // Show
 app.get('/products/:id', (req, res) => {
-  Product.findById(req.params.id, (error, foundProduct) => {
-    res.render('show.ejs', {
-      product: foundProduct
+  Product.findById(req.params.id, (error, product) => {
+    res.render('show.ejs', { 
+      product: product 
     });
   });
 });
@@ -94,3 +94,4 @@ app.get('/products/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Express is listening on port: ${PORT}`)
 });
+
