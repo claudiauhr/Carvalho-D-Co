@@ -4,7 +4,10 @@
   <%- include('./partials/head.ejs')%>
 </head>
 <body>
-    <h1>Edit Jewelry</h1>
+  <nav>
+    <!-- ============ HEADER ============ --> 
+    <%- include('./partials/header.ejs') %>
+  </nav>
     <form action="/products/<%= product._id %>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%= product.name %>" /><br /><br />
 	    Image: <img src="<%= product.img%>.jpg"><br /><br />

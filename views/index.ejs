@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head.ejs')%>
-    </head>
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
 <body>
-    <nav>
-        <a href="/products/new"> Add New Jewelry</a>
-    </nav>
-
-    <h1>Jewelry Store</h1>
-    
+  <nav>
+    <!-- ============ HEADER ============ --> 
+    <%- include('./partials/header.ejs') %>
+  </nav>
+    <h2>Popular Jewelry</h2>    
     <ul>
         <% products.forEach(product => { %>
          <li>

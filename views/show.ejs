@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head.ejs')%>
-    </head>
+<head>
+  <%- include('./partials/head.ejs')%>
+</head>
 <body>
-    <nav>
-        <a href="/products">Jewelry Store</a>
-    </nav>
-    <h1><%= product.name %></h1><br/>
-    <img src="<%= product.img%>.jpg">
-    <p><%= product.description %></p>
-    <p><%= product.price %></p>
-
-    <!-- Delete section -->
-    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
-    </form>
+  <nav>
+    <!-- ============ HEADER ============ --> 
+    <%- include('./partials/header.ejs') %>
+  </nav>
+  <h1><%= product.name %></h1><br/>
+  <img src="<%= product.img%>.jpg">
+  <p><%= product.description %></p>
+  <p><%= product.price %></p>
+  
+  <!-- Delete section -->
+  <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete" />
+  </form>
     
-    <!-- Edit page -->
-    <a href="/products/<%= product._id %>/edit">Edit Jewelry</a>
+  <!-- Edit page -->
+  <a href="/products/<%= product._id %>/edit">Edit Jewelry</a>
 
-    <!-- ============ FOOTER ============ -->
-    <%- include('./partials/footer.ejs') %>
+  <!-- ============ FOOTER ============ -->
+  <%- include('./partials/footer.ejs') %>
 </body>
 </html>
