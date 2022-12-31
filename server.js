@@ -22,8 +22,7 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 
 
 // Middleware
-// Body parser middleware: give us access to req.body
-// extended: false - does not allow nested objects in query strings
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
