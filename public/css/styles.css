@@ -1,0 +1,28 @@
+ul.navmenu {
+    background-color: yellowgreen; 
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+ul.navmenu li {
+    background-color: gray; 
+    margin: 6px;
+}
+ul.navmenu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 53px;
+    padding: 0px 15px;
+}
+nav.top-pic {
+    background-color: aquamarine;
+    padding: 20px;
+    margin: 20px;
+    border: 10px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+}

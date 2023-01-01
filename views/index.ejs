@@ -4,11 +4,16 @@
   <%- include('./partials/head.ejs')%>
 </head>
 <body>
-  <nav>
+  <nav id="partials">
     <!-- ============ HEADER ============ --> 
     <%- include('./partials/header.ejs') %>
   </nav>
-    <h2>Popular Jewelry</h2>    
+    <h2>Popular Jewelry</h2>
+    <nav class="top-pic">
+      <img src="/images/necklace-golden.jpeg" width="300">
+      <img src="/images/ring-cristal.jpeg" width="350">
+      <img src="/images/gold-chain-necklace-27763.jpg" width="300">
+    </nav>
     <ul>
         <% products.forEach(product => { %>
          <li>

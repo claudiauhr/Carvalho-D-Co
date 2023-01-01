@@ -1,4 +1,5 @@
 //Dependencies
+const path = require('path');
 const express = require('express');
 const mongoose = require ('mongoose');
 const methodOverride = require('method-override');
@@ -8,6 +9,7 @@ require('dotenv').config()
 
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'))
 // Database Configuration
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -25,6 +27,7 @@ db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Seed Route
 app.get('/products/seed', (req, res) => {
