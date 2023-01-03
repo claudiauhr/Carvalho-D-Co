@@ -22,7 +22,7 @@ A full CRUD web-based application for people show their jewelry/accessories desi
 
 ## Getting started
 
-[Click here](#) to visit the deployed app!
+[Click here](https://jewelry-designs.herokuapp.com/products) to visit the deployed app!
 
 ## Future Enhancements
 
