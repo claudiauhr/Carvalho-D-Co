@@ -6,7 +6,8 @@ A full CRUD e-commerce web-based application with design jewelry/accessories.
 
 ## Technologies Used
 
-- HTMLL5/Ejs
+- HTMLL5
+- Ejs
 - CSS3
 - JavaScript/Json
 - Express
