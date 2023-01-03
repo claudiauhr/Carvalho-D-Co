@@ -1,8 +1,8 @@
-# Carvalho Design & Co.
+# Jewelry & Designs
 
 ## Description
 
-A full CRUD e-commerce web-based application with design jewelry/accessories.
+A full CRUD web-based application for people show their jewelry/accessories design.
 
 ## Technologies Used
 
