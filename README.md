@@ -12,12 +12,12 @@ A e-commerce web-based application with design jewelry/accessories.
 - Express
 - Node.js
 - MongoDB/Mongoose
-- Git/GitHub 
+- Git/GitHub
 
 ## Screenshots
 
-![my wireframe]()
-![my production version]()
+![my wireframe](wireframe-store.png)
+![my production version](store-app.png)
 
 ## Getting started
 
@@ -25,4 +25,7 @@ A e-commerce web-based application with design jewelry/accessories.
 
 ## Future Enhancements
 
-
+- Have login/register page function
+- Add authentication for security
+- Have a drop menu to better navegation
+- Have a page to review and chat with client
