@@ -2,7 +2,7 @@
 
 ## Description
 
-A e-commerce web-based application with design jewelry/accessories.
+A full CRUD e-commerce web-based application with design jewelry/accessories.
 
 ## Technologies Used
 
