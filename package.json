@@ -1,5 +1,5 @@
 {
-  "name": "carvalho-d-co",
+  "name": "jewelry-designs",
   "version": "1.0.0",
   "description": "## Description",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/claudiauhr/Carvalho-D-Co.git"
+    "url": "git+https://github.com/claudiauhr/jewelry-designs"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/claudiauhr/Carvalho-D-Co/issues"
+    "url": "https://github.com/claudiauhr/jewelry-designs/issues"
   },
-  "homepage": "https://github.com/claudiauhr/Carvalho-D-Co#readme",
+  "homepage": "https://github.com/claudiauhr/jewelry-designs#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
