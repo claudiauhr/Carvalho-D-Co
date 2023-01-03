@@ -8,11 +8,12 @@
     <!-- ============ HEADER ============ --> 
     <%- include('./partials/header.ejs') %>
   </nav>
-  <h1><%= product.name %></h1><br/>
-  <img src="<%= product.img%>.jpg">
-  <p><%= product.description %></p>
-  <p><%= product.price %></p>
-  
+  <div class="show-golden">
+    <h1><%= product.name %></h1><br/>
+    <img src="<%= product.img%>.jpg" width="200" height="200">
+    <p><%= product.description %></p>
+    <p><%= product.price %></p>
+ 
   <!-- Delete section -->
   <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
     <input type="submit" value="Delete" />
@@ -20,7 +21,7 @@
     
   <!-- Edit page -->
   <a href="/products/<%= product._id %>/edit">Edit Jewelry</a>
-
+</div>
   <!-- ============ FOOTER ============ -->
   <%- include('./partials/footer.ejs') %>
 </body>

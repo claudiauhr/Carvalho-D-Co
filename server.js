@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const methodOverride = require('method-override');
 const Product = require('./models/product');
-const golden = require('./golden');
+const golden = require('./models/golden');
 require('dotenv').config()
 
 const app = express();

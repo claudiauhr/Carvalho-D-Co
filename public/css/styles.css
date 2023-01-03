@@ -1,28 +1,47 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
 ul.navmenu {
-    background-color: yellowgreen; 
+    background-color: none; 
     height: 70px;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
 }
 ul.navmenu li {
-    background-color: gray; 
+    background-color: none; 
     margin: 6px;
 }
 ul.navmenu a {
     display: block;
     width: 100%;
     height: 100%;
-    color: #fff;
+    text-decoration: none;
+    color: gray;
     font-size: 1.2em;
     line-height: 53px;
     padding: 0px 15px;
 }
 nav.top-pic {
-    background-color: aquamarine;
-    padding: 20px;
+    background-color: rgb(94, 209, 200);
+    padding: 60px 20px;
     margin: 20px;
-    border: 10px solid blue;
     display: flex;
     justify-content: space-evenly;
+}
+.top-pic img {
+    border: 30px solid whitesmoke;
+    border-style: ridge;
+}
+div.show-golden {
+    text-align: center;
+}
+div.new-golden {
+    text-align: center;
 }

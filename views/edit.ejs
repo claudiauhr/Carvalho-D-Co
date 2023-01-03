@@ -10,7 +10,7 @@
   </nav>
     <form action="/products/<%= product._id %>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%= product.name %>" /><br /><br />
-	    Image: <img src="<%= product.img%>.jpg"><br /><br />
+	    Image: <img src="<%= product.img%>.jpg" width="200" height="200"><br /><br />
       Description: <input type="text" name="description" value="<%= product.description %>" /><br /><br />
       Price: <input type="text" name="price" value="<%= product.price %>" /><br /><br />
       <input type="submit" name="" value="Update" />
