@@ -40,7 +40,7 @@ app.get('/products/seed', (req, res) => {
 
 // Induces
 // Index
-app.get('/', (req, res) => {
+app.get('/products', (req, res) => {
   Product.find({}, (error, allProducts) => {
     res.render('index.ejs', {
       products: allProducts,
