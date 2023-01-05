@@ -18,7 +18,7 @@ A full CRUD web-based application for people show their jewelry/accessories desi
 ## Screenshots
 
 ![my wireframe](wireframe-store.png)
-![my production version](store-app.png)
+![my production version](jewelry-designs.png)
 
 ## Getting started
 
