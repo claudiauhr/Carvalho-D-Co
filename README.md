@@ -28,6 +28,7 @@ A full CRUD web-based application for people show their jewelry/accessories desi
 
 ## Future Enhancements
 
+- Add controllers and more pages
 - Have login/register page function
 - Add authentication for security
 - Have a drop menu to better navegation
