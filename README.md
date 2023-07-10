@@ -2,14 +2,14 @@
 
 ## Description
 
-A full CRUD web-based application for people show their jewelry/accessories design.
+A full CRUD web-based application for people to show their jewelry/accessories design.
 
 ## Technologies Used
 
 - HTMLL5
 - Ejs
 - CSS3
-- JavaScript/Json
+- JavaScript/JSON
 - Express
 - Node.js
 - MongoDB/Mongoose
